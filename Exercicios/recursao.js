@@ -43,3 +43,23 @@ function soma(array) {
 }
 
 console.log(soma([2,3,8,1,1])) // 15
+
+
+///////////////////////////////////////////////////////
+
+function paresDoArray(array){
+    // escreve aqui a função
+
+    let arr = []
+    let a = 0
+
+    for (let i=0; i < array.length; i++){
+        if(array[i] % 2 == 0){
+            a = array[i]
+            arr.push(a)
+        }
+    }
+    return arr
+}
+
+console.log(paresDoArray([1,2,3,4]))
