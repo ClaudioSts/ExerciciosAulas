@@ -87,7 +87,7 @@ console.log(mapaDeOcorrencias(array[1,2,1,1,3]))
 */
 function mapear(array) {
 
-const output = array.reduce((map, itemValue) => {
+const newMap = array.reduce((map, itemValue) => {
     
     if (!map.has(itemValue)){
         map.set(itemValue, 1)
@@ -96,7 +96,7 @@ const output = array.reduce((map, itemValue) => {
     return map;
   }, new Map());
  
-    return output
+    return newMap
 }
 console.log(mapear([1,2,3,4,5,1,1,1]));
 
