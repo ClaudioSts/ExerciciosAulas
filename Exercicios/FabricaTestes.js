@@ -1,20 +1,33 @@
 class FabricaDeTestes {
     #testes
-    #argumentos
-    #resultadoEsperado
-    #nome
-
-    constructor(argumentos, resultadoEsperado, nome){
-        this.#argumentos = argumentos
-        this.#resultadoEsperado = resultadoEsperado
-        this.#nome = nome
+        constructor(testes) {
+            [{args, resultado, nome}]
+        }
+    
+        testar(funcao) {
+            
+        }
     }
 
-    get argumentos() { return this.#argumentos}
-    get resultadoEsperado() { return this.#resultadoEsperado}
-    get nome() { return this.#nome}
 
-    testar() {
-        
+    ////////////////////
+
+    const testes = [
+        {
+            args: [3, 2],
+            expected: 5
+        },
+        {
+            args: [3, 3],
+            expected: 6
+        }
+    ]
+    
+    function soma(a, b) {
+        return a + b
     }
-}
+    function soma(a, b) {
+        return a * b
+    }
+    
+    Class.test(soma)
