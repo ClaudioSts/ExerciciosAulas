@@ -212,3 +212,91 @@ toString() {
     }
 }
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+class Calculadora {
+    #historico
+    #ultimoResultado
+
+    static operacoes = new Map([
+        ['+', (a, b) => a + b],
+        ['-', (a, b) => a - b],
+        ['/', (a, b) => a / b],
+        ['*', (a, b) => a * b]
+    ])
+    constructor() {
+        this.limparHistorico()
+    }
+    somar (a, b){
+        this.#aplicaOperacao(a, b, '+')
+        // Retornar instância da Calculadora
+        return this
+    }
+
+    subtrair (a, b) {
+        this.#aplicaOperacao(a, b, '+')
+        // Retornar instância da Calculadora
+        return this
+    }
+
+    multiplicar (a, b) {
+        this.#aplicaOperacao(a, b, '*')
+        // Retornar instância da Calculadora
+        return this
+    }
+
+    dividir (a, b) {
+        this.#aplicaOperacao(a, b, '/')
+        // Retornar instância da Calculadora
+        return this
+    }
+
+    #aplicaOperacao (a, b, op) { //op = +, -, *, /
+        // #corrigeArgumentos
+        const args = this.#corrigeArgumentos(a, b)
+        // Calcular o resultado
+
+        const resultado = opFunc(args.a, args.b)
+        // Guardar resultado no histórico
+        // Guardar resultado no ultimoResultado
+
+    }
+
+    #corrigeArgumentos (a, b) {
+        // Corrigir ordem dos argumentos
+        // Corrigir tipo dos argumentos
+        if (b === undefined) {
+            return {
+                a: this.#ultimoResultado,
+                b: BigInt(a)
+            }
+        }
+        return {
+            a: BigInt(a),
+            b: BigInt(b)
+        }
+    }
+
+    obterResultado () {
+        return this.#ultimoResultado
+    }
+
+    limparHistorico() {
+        this.#historico = []
+        this.#ultimoResultado = 0n
+        return this
+    }
+
+    toJSON() {
+        return {
+            historico: this.#historico,
+            ultimoResultado: String(this.#ultimoResultado)
+        }
+    }
+
+    toString () {
+        return ''
+    }
+}
