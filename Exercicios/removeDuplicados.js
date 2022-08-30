@@ -10,7 +10,7 @@ function stringSuperReduzida(str) {
         return target;
     }, []);
 
-    return values.length > 0 ? values.join('') : 'Empty String';
+    return values.length > 0 ? values.join('') : 'String Vazia';
 }
 
 

@@ -20,14 +20,12 @@ function inverteArray(array) {
     if (array.length === 1) {
         return array 
     } else {
-        return inverteArray(array.slice(1)).concat(array[0])
-
-    return array;
+        return inverteArray(array.slice(1)).concat(array[0]);
     }
     
 }
 
-console.log(inverteArray([1,3,4,2])) // [2,4,3,1]
+console.log(inverteArray([1,2,3,4,5])) // [2,4,3,1]
 
 ///////////////////////////////////////////////////////
 

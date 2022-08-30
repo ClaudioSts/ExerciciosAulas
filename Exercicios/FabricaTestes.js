@@ -1,11 +1,14 @@
 class FabricaDeTestes {
     #testes
         constructor(testes) {
-            [{args, resultado, nome}]
+            this.testes = testes
         }
     
         testar(funcao) {
-            
+            this.#testes.reduce((acc, elem) => {
+                return funcao(...elem.args) === elem.resultadoEsperado ? acc + 1 : acc
+            }, 0)
+            funcao()            
         }
     }
 
