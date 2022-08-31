@@ -38,7 +38,7 @@ function minMax (array, n) {
 
     let arrMax = [...array].sort((a, b) => b - a)
 
-    console.log([arrMin, arrMax])
+    //console.log([arrMin, arrMax])
 
     let sumMin = 0
     let sumMax = 0
@@ -54,7 +54,7 @@ function minMax (array, n) {
    sumMax = arrMax.reduce(function(a, b) {
     return a + b}, 0)
 
-    return 'Resultado ' + '[' + sumMin + ', ' + sumMax + ']'
+    return [sumMin, sumMax]
 
 }
 

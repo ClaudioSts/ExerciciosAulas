@@ -10,3 +10,11 @@ function validaSubsequente(array, subarray) {
 
     return subarray.length === index
 }
+
+
+////////////////////////////////////
+function validaSubsequente(array, subarray) {
+    // Escreve aqui a função
+   return subarray.every(element => array.includes(element))
+   
+}
