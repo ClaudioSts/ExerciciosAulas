@@ -5,7 +5,7 @@ function arrayInfinito(array, esq, dir) {
     let sum = 0
     
     
-    newArr = Array(dir).fill(array).reduce((a, b) => [...a, ...b], [])
+    newArr = Array(dir + 1).fill(array).reduce((a, b) => [...a, ...b], [])
     console.log(newArr)
     
     reduceArr = newArr.slice(esq, (dir + 1))

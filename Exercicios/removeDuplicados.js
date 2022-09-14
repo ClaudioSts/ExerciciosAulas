@@ -18,3 +18,12 @@ console.log(stringSuperReduzida("abbcd"))
 console.log(stringSuperReduzida("abba"))
 console.log(stringSuperReduzida("abbcbbca"))
 console.log(stringSuperReduzida("abbcbbcaa"))
+
+
+function removeRepeatedKeepLast ( array, compare = defaultCompare) {
+    return array.reduce((acc, v) => acc.filter(e => !compare(v, e)).concat(v), [])
+}
+
+function defaultCompare (e1, e2) {
+    return e1 === e2
+}
