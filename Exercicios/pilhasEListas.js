@@ -2,11 +2,11 @@ class Pilha {
     #capacidade
     #pilha
 
-    constructor (capacidade) {
+    constructor(capacidade) {
         this.#pilha = []
-        if(capacidade == undefined) {
+        if (capacidade == undefined) {
             this.#capacidade = Infinity
-        }else {
+        } else {
             this.#capacidade = capacidade
         }
     }
@@ -14,7 +14,7 @@ class Pilha {
     adicionar(elem) {
         if (this.#pilha.length == this.#capacidade) {
             return "Pilha cheia!"
-        }else {
+        } else {
             this.#pilha.push(elem)
         }
     }
@@ -22,8 +22,8 @@ class Pilha {
     remover() {
         if (this.#pilha.length == 0) {
             return "Pilha vazia!"
-        }else {
-        this.#pilha.pop()
+        } else {
+            this.#pilha.pop()
         }
     }
 
@@ -31,7 +31,7 @@ class Pilha {
         if (this.#pilha.length == 0) {
             return "Pilha vazia!"
         } else {
-        return this.#pilha[this.#pilha.length - 1]
+            return this.#pilha[this.#pilha.length - 1]
         }
     }
 }

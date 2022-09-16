@@ -1,4 +1,4 @@
-function removeRepeatedKeepLast(array) {
+function removeRepeatedKeepNone(array) { //não funciona bem (so com arrays)
 
     let n = array.length
     let newArr = []
@@ -42,7 +42,7 @@ function removeRepeatedKeepLast2(array) {
 }
 
 
-console.log(removeRepeatedKeepLast([1, 2, 1, 1, 2, 4, 2, 1]))
+console.log(removeRepeatedKeepNone([1, 2, 1, 1, 2, 4, 2, 1]))
 console.log(removeRepeatedKeepLast2([1, 2, 1, 1, 2, 4, 2, 1]))
 
 ///////////////////////////////////////////////////////////////////
@@ -63,3 +63,23 @@ function countOccurrences(arr, extractKey) {
         ])
     }, new Map())
 }
+
+
+////////////////////////////////////////////////////////////////////////
+
+const defaultCompare = (e1, e2) => e1 === e2
+const defaultExtractKey = e => e
+
+
+function removeRepeatedKeepFirst(arr, compare = defaultCompare, extractKey = defaultExtractKey) {
+    return arr
+        .reduce((noDuplicatesArray, element) => {
+            if (!noDuplicatesArray.some(e => compare(e, element))) {
+                return noDuplicatesArray.concat(element)
+            }
+            return noDuplicatesArray
+        }, [])
+}
+
+////////////////////////////////////////////////////////////////////////
+
