@@ -9,7 +9,7 @@ function horaPorExtenso(data){
 
     switch(horas){
         case 0:
-            valorHora = "zero"
+            valorHora = "meia noite"
             break
         case 1:
             valorHora = "uma"
