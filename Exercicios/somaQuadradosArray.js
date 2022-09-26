@@ -11,3 +11,18 @@ return newArr.reduce((a,b) => a + b, 0)
 function quadrados(n) {
     return n ** 2
 }    
+
+
+//////////////////////////////////////////////////
+function somaDosQuadradosDoArray(array) {
+    // escreve aqui a função
+
+    let sum = 0
+
+    i = array.length
+
+    while (i--) {
+        sum += Math.pow(array[i], 2)
+    }
+    return sum 
+}

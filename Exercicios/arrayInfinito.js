@@ -16,3 +16,25 @@ function arrayInfinito(array, esq, dir) {
     }
     
     console.log(arrayInfinito([1,2,3,4], 0, 10))
+
+
+    ////////////////////////////////////////////////////////////
+
+    function arrayInfinito(array, esq, dir){
+        if(array == undefined || array.length == 0) return 0
+         
+        let rep = Math.ceil(dir / array.length);
+    
+        let arrayB = array
+        for(let i = 0; i < rep; i++){
+            arrayB = arrayB.concat(array);
+            }
+    
+            let soma = 0
+    
+        for(let i = esq; i <= dir; i++){
+          soma = soma + arrayB[i];
+        }
+        return soma;
+    
+    }

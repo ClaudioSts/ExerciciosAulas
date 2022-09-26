@@ -20,7 +20,7 @@ function countOccurrences(arr, extractKey) {
 
 ///////////////////////////////////////////////////////
 
-function removeRepeatedKeepLast2(array) {
+function removeRepeatedKeepNone2(array) {
 
     let counts = array.reduce(function (elem, b) {
         elem[b] = elem[b] ? elem[b] + 1 : 1;
@@ -36,7 +36,7 @@ function removeRepeatedKeepLast2(array) {
 
 
 console.log(removeRepeatedKeepNone([1, 2, 1, 1, 2, 4, 2, 1]))
-console.log(removeRepeatedKeepLast2([1, 2, 1, 1, 2, 4, 2, 1]))
+console.log(removeRepeatedKeepNone2([1, 2, 1, 1, 2, 4, 2, 1]))
 
 ///////////////////////////////////////////////////////////////////
 
@@ -76,3 +76,10 @@ function removeRepeatedKeepFirst(arr, compare = defaultCompare, extractKey = def
 
 ////////////////////////////////////////////////////////////////////////
 
+function removeRepeatedKeepLast (array, compare = defaultCompare) {
+    return array.reduce((acc, v) => acc.filter(e => !compare(v, e)).concat(v), [])
+}
+
+function defaultCompare(e1, e2) {
+    return e1 === e2
+}
