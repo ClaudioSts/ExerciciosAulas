@@ -36,3 +36,31 @@ function produtoExclusivo(array) {
 
     return arrayV
 }
+
+////////////////////////////////////////////////////////////////////////////
+
+function getProducts(arr) {
+
+    let products = [];
+
+    for(let i = 0; i < arr.length; i++) {
+
+        let product = 1;
+
+        for(let ii = 0; ii < arr.length; ii++) {
+
+            if(i != ii) {
+
+                product *= arr[ii];
+
+            }
+
+        }
+
+        products.push(product);
+
+    }
+
+    return products;
+
+}
