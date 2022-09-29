@@ -7,7 +7,7 @@ let median = Math.floor(array.length / 2);
   if (array.length % 2)
   	return array[median];
   else
-  	return (array[median - 1] + array[median]) / 2.0;
+  	return (array[median - 1] + array[median]) / 2;
 }
 
 console.log(computeMedian([1,2,3,1]));
