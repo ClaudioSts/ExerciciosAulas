@@ -14,5 +14,25 @@ function verificaPalindromo(string) {
     console.log(segundaMetade)
     return primeiraMetade.toLowerCase() === segundaMetade.toLowerCase()
 }
-console.log(verificaPalindromo("osso"))
-console.log(verificaPalindromo("osto"))
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function palindrome(str) {
+  
+  let newString = str.replace(/[^a-z0-9]/gi, '')
+
+  let centralIndex = newString.length / 2
+  let string = newString.toLowerCase()
+  let firstHalf = ""
+  let secondHalf = ""
+
+  for (let i =0; i< centralIndex; i++) {
+    firstHalf += string[i]
+  }
+  for (let i = string.length -1; i >= centralIndex - 0.5; i--) {
+    secondHalf += string[i]
+  }
+
+  return firstHalf === secondHalf
+  
+}
